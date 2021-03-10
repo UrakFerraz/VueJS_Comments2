@@ -48,13 +48,16 @@
         },
         methods: {
             enviar() {
-                const name = this.nome == '' ? 'Anônimo' : this.nome
+                const name = this.nome == '' ? 'Anônimo' : this.nome;
+                if(this.mensagem == '') return
                 this.comments.push({
                     id: this.id,
                     nome: name,
                     mensagem: this.mensagem,
                     reminder: this.reminder
-                })
+                });
+                this.name = '',
+                this.mensagem = ''
             },
         }
     }
